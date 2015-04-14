@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Everything I know about Middleman & Jekyll</title>
+
+		<meta name="description" content="A presentation on static site generators for Bmore Rails meetup">
+		<meta name="author" content="Angelique WEger">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<!-- INTRO -->
+				<section>
+					<section data-background="bkgds/tv-static.gif">
+						<div id="titleSlide">
+							<h1 class="title">Static Site Generators</h1><br>
+							<p>Ang&eacute;lique Weger</p>
+							<p><small><a href="http://angeliqueweger.com">angeliqueweger.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/messypixels" title="Follow me on Twitter">@messypixels</a></small></p>
+							<p><small>Senior Front End Developer&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.detroittrading.com/" title="Detroit Trading--Innovative Tools to Sell Cars">Detroit Trading</a></small></p>
+							<p><small>Chapter Leader&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://gdibaltimore.com" title="Girl Develop It, Baltimore chapter">Baltimore Girl Develop It</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/gdibaltimore" title="Follow us on Twitter">@gdibaltimore</a></small></p>
+						</div>
+					</section>
+					<section>
+						<h2 class="title">My Plan</h2>
+						<ul>
+							<li>Static Site Generators 101</li>
+							<li>My Priorities</li>
+							<li>A Tale of Two Blogs: Jekyll & Middleman</li>
+							<li>Pros & Cons of Going Static</li>
+						</ul>
+					</section>
+				</section><!-- INTRO -->
+
+				<!-- WHAT ARE SSG -->
+				<section>
+					<section>
+						<h2 class="fragment highlight-red">Static Site</h2>
+						<small class="fragment">Flat HTML files. No dynamic content.</small>
+						<h2 class="fragment highlight-blue">Generators</h2>
+						<small class="fragment">Processes files and markup and converts them into a flat HTML web site</small>
+					</section>
+
+					<section>
+						<div class="boxInline">
+							<h3 class="fragment highlight-blue">Input</h3>
+							<ul class="fragment">
+								<li>Ruby files for processing</li>
+								<li>ERB files for layout, partials <br> and templates</li>
+								<li>Markdown, Haml, etc for content</li>
+								<li>YAML for page/post data</li>
+								<li>Sass, LESS for styles</li>
+							</ul>
+						</div>
+						<div class="boxInline" style="font-size:124px;padding:50px;vertical-align:middle;">
+							&rarr;
+						</div>
+						<div class="boxInline">
+							<h3 class="fragment highlight-red">Output</h3>
+							<ul class="fragment">
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JS</li>
+								<li>media</li>
+							</ul>
+						</div>
+					</section>
+
+					<section data-background="bkgds/toasters.gif">
+						<h1 class="fragment">Sweet Nostalgia</h1>
+						<!-- Essentially, not far from a circa 1998 web site, but with a lot of the conveniences of modern web dev baked in -->
+					</section>
+				</section><!-- WHAT ARE SSG -->
+
+				<!-- WHY WAS I SHOPPING SSGs -->
+				<section>
+					<section>
+						<h2>Background</h2>
+						<small class="fragment" data-fragment-index="1">To sum up&hellip;</small>
+						<ul>
+							<li class="fragment" data-fragment-index="2">Blog</li>
+							<li class="fragment" data-fragment-index="3">Sass</li>
+							<li class="fragment" data-fragment-index="4">Syntax highlighting for code</li>
+							<li class="fragment" data-fragment-index="5">A language I <span class="fragment strike" data-fragment-index="6">am familiar with</span><br><span class="fragment" data-fragment-index="6">have spent at least 8 hours using</span></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Not concerned</h3>
+						<ul>
+							<li class="fragment">Migrating data (in or out)</li>
+							<li class="fragment">Available styles and templates</li>
+						</ul>
+					</section>
+					<!-- Thought I'd have an easy time of it, hah -->
+					<section data-background="bkgds/ssg.repo.jpg"></section>
+					<!-- Almost 300 -->
+					<section data-background="bkgds/staticsitegenerators.net.jpg"></section>
+					<!-- Almost 400 -->
+					<section data-background="bkgds/staticgen.com.jpg"></section>
+					<!-- Organized by language, including at least 4 I've never heard of before -->
+					<section data-background="bkgds/overwhelmed.gif"></section>
+					<section>
+						<h2>FEWD ISO SSG with&hellip;</h2>
+						<ul>
+							<li class="fragment">Recent activity/development<br><small>abandonware need not apply</small></li>
+							<li class="fragment">A large & active community</li>
+							<li class="fragment">Decent docs<br><small>Not just GH Issues</small></li>
+							<li class="fragment">Focused on either blogging or blank-slate static sites</li>
+						</ul>
+					</section>
+				</section><!-- WHY WAS I SHOPPING SSGs -->
+				
+				<!-- JEKYLL & MIDDLEMAN -->
+				<section>
+					<section>
+						<h2 class="fragment">First Impressions</h2>
+						<div class="boxInline" style="margin-right:3%;">
+							<img src="img/jekyll.png" alt="Jekyll" class="imgBare" style="height:auto;width:300px;">
+							<ul class="fragment" style="margin-top:40px;vertical-align:top;">
+								<li>Easier to understand</li>
+								<li>Better docs</li>
+							</ul>
+						</div>
+						<div class="boxInline">
+							<img src="img/middleman-logo.svg" alt="Middleman" class="imgBare" style="height:auto;width:300px;">
+							<ul class="fragment" style="height:300px;margin-top:100px;vertical-align:top;">
+								<li>Docs unclear</li>
+								<li>Less hand holding</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h4>Middleman: Setting Up</h4>
+						<pre class="fragment"><code data-trim>
+							$ gem install middleman
+						</code></pre>
+						<pre class="fragment"><code data-trim>
+							$ middleman init project
+						</code></pre>
+						<pre class="fragment"><code data-trim>
+							$ middleman server
+						</code></pre>
+						<small class="fragment">Instructions onscreen direct you to  http://0.0.0.0:4567/, but needed to go to  http://localhost:4567</small>
+						<img src="middleman/mm-running2.jpg" class="fragment imgBare" alt="Middleman is running" style="height:400px;width:auto;">
+					</section>
+					<section>
+						<h4>Middleman: Blogging</h4>
+						<span class="fragment">
+							<small>In your Gemfile</small>
+							<pre><code data-trim="">gem "middleman-blog"</code></pre>
+						</span>
+						<br>
+						<pre class="fragment"><code data-trim>$ middleman init --template=blog</code></pre>
+						<small class="fragment">This was a bit busted, as I'd already made other changes; restarted from scratch</small>
+						<img src="middleman/mm-blog-yay.jpg" class="fragment imgBare" alt="Middleman is running" style="height:400px;width:auto;">
+					</section>
+					<section data-background="middleman/mm-config.jpg"></section>
+					<section data-background="middleman/mm-layout.jpg"></section>
+					<section data-background="middleman/mm-index.jpg"></section>
+					<section data-background="middleman/mm-markdown.jpg"></section>
+					<section data-background="middleman/mm-site-post.jpg"></section>
+					<section>
+						<h4>Middleman: Building</h4>
+						<pre><code data-trim>$ middleman build</code></pre>
+						<img src="middleman/mm-build.jpg" class="fragment imgBare">
+					</section>
+					<section>
+						<h4>Middleman: Deploying</h4>
+						<h2 class="fragment">Thwarted!</h2>
+						<p class="fragment">Eventually <a href="http://www.beesbot.com/middleman-github-user-pages/">this walkthrough</a> sorted me out.</p>
+					</section>
+					<section>
+						<h4>Jekyll: Setting Up</h4>
+						<pre class="fragment"><code data-trim>
+							$ gem install jekyll
+						</code></pre>
+						<pre class="fragment"><code data-trim>
+							$ jekyll new project
+						</code></pre>
+						<pre class="fragment"><code data-trim>
+							$ jekyll serve
+						</code></pre>
+					</section>
+					<section>
+						<h4>Jekyll: Blogging</h4>
+						<img src="jekyll/j-firstserve.JPG" alt="">
+					</section>
+					<section data-background="jekyll/j-config.jpg"></section>
+					<section data-background="jekyll/j-layout.jpg"></section>
+					<section data-background="jekyll/j-index.jpg"></section>
+					<section data-background="jekyll/j-markdown.jpg"></section>
+					<section data-background="jekyll/j-site-post.jpg"></section>
+					<section>
+						<h4>Jekyll: Building</h4>
+						<pre><code data-trim>$ jekyll build</code></pre>
+						<img src="jekyll/j-build.jpg" class="fragment imgBare">
+					</section>
+					<section>
+						<h4>Jekyll: Deploying</h4>
+						<h2 class="fragment">So Very Thwarted!</h2>
+						<p class="fragment">Should have been a warning sign when the site noted Windows wasn't officially supported.</p>
+						<p class="fragment">Creating & using a <a href="http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html">Rakefile</a> was my golden ticket.</p>
+					</section>
+					<section>
+						<h2>What Worked</h2>
+						<ul>
+							<li class="fragment">Blog posts</li>
+							<li class="fragment">Adding location to post metadata</li>
+							<li class="fragment">Adding prefix directory to site</li>
+							<li class="fragment">Sass + Bourbon</li>
+							<li class="fragment">Web fonts</li>
+							<li class="fragment">Code syntax highlighting</li>
+							<li class="fragment">Modifying & creating templates</li>
+						</ul>
+					</section>
+					<section>
+						<h2 class="fragment">Current Impressions</h2>
+						<div class="boxInline" style="margin-right:5.5%;width:46%">
+							<img src="img/jekyll.png" alt="Jekyll" class="imgBare" style="height:100px;width:auto;">
+							<ul class="fragment" style="font-size:80%;vertical-align:top;">
+								<li>More is done out of the box <small>&mdash;which makes the stuff that's missing more surprising:</small>
+									<ul>
+										<li>Tagging</li>
+										<li>Creating new posts from the command line</li>
+									</ul>
+								</li>
+								<li>Despite expecting deploying to GH Pages to be a cinch, it was a bit complicated<br>
+									<small>Rouge may have been guilty here</small>
+								</li>
+							</ul>
+						</div>
+						<div class="boxInline" style="width:46%;">
+							<img src="img/middleman-logo.svg" alt="Middleman" class="imgBare" style="height:125px;margin:0;width:auto;">
+							<ul class="fragment" style="font-size:80%;vertical-align:top;">
+								<li>Better docs</li>
+								<li>More reliable<br><small>&mdash; on Windows!</small></li>
+								<li>Error messages were more informative</li>
+								<li>Site structure was cleaner</li>
+								<li>Just plain enjoyed working on this site more</li>
+							</ul>
+						</div>
+					</section>
+				</section><!-- JEKYLL & MIDDLEMAN -->
+				<!-- SUMMARY + END -->
+				<section>
+					<section>
+						<h2>Static Site Generators</h2>
+						<div class="boxInline" style="margin-right:5.5%;width:46%;">
+							<h3>Pros</h3>
+							<ul class="fragment">
+								<li>Zippy<br>
+									<small>No DB queries!</small>
+								</li>
+								<li>Low maintenance, easy to back up</li>
+								<li>Source control<br>
+									<small>Files AND content</small>
+								</li>
+								<li>More secure</li>
+								<li>Low-cost or free hosting</li>
+								<li>Very personalized<br>
+								<small>Use your favorite markup language, favorite text editor</small>
+								</li>
+							</ul>
+						</div>
+						<div class="boxInline" style="width:46%;">
+							<h3>Cons</h3>
+							<ul class="fragment">
+								<li>No built-in comments</li>
+								<li>No out-of-the-box search</li>
+								<li>Tied to your local dev<br>
+								<small>No updates from your phone</small>
+								</li>
+								<li>No scheduled posts</li>
+								<li>No GUI<br>
+								<small>Be clear about who will be using, updating site</small>
+								</li>
+								<li>Paralyzed by choice</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h1>Questions?</h1>
+					</section>
+					<section>
+						<div>
+							<h1 class="title">THANK YOU!</h1><br>
+							<p>Ang&eacute;lique Weger</p>
+							<p><small><a href="http://angeliqueweger.com">angeliqueweger.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/messypixels" title="Follow me on Twitter">@messypixels</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/gdibaltimore" title="Follow us on Twitter">@gdibaltimore</a></small></p>
+						</div>
+					</section>
+				</section><!--  SUMMARY + END -->
+			</div><!-- .slides -->
+
+		</div><!-- .reveal -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

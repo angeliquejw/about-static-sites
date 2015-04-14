@@ -1,0 +1,33 @@
+.reveal section .boxInline {
+	display:inline-block;
+	vertical-align: top;
+	width:auto;
+}
+
+.reveal section .imgBare {
+	background:transparent;
+	border:none;
+	box-shadow:none;
+}
+
+#titleSlide {
+	background:rgba(0,0,0,.75);
+	border-radius: 130px;
+	margin-left:20px;
+	width: 82.4%;
+}
+
+#titleSlide .title {
+	margin-top:20px;
+	padding-top:30px;
+}
+
+.reveal section .fragment.strike {
+	opacity: 1;
+	visibility: visible;
+}
+
+.reveal section .fragment.strike.visible {
+	opacity: .4;
+	text-decoration: line-through;
+}
