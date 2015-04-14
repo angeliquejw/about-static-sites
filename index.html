@@ -66,16 +66,16 @@
 				<!-- WHAT ARE SSG -->
 				<section>
 					<section>
-						<h2 class="fragment highlight-red">Static Site</h2>
-						<small class="fragment">Flat HTML files. No dynamic content.</small>
-						<h2 class="fragment highlight-blue">Generators</h2>
-						<small class="fragment">Processes files and markup and converts them into a flat HTML web site</small>
+						<h2 class="fragment highlight-red" data-fragment-index="1">Static Site</h2>
+						<small class="fragment" data-fragment-index="1">Flat HTML files. No dynamic content.</small>
+						<h2 class="fragment highlight-blue" data-fragment-index="2">Generators</h2>
+						<small class="fragment" data-fragment-index="2">Processes files and markup and converts them into a flat HTML web site</small>
 					</section>
 
 					<section>
 						<div class="boxInline">
-							<h3 class="fragment highlight-blue">Input</h3>
-							<ul class="fragment">
+							<h3 class="fragment highlight-blue" data-fragment-index="1">Input</h3>
+							<ul class="fragment" data-fragment-index="1">
 								<li>Ruby files for processing</li>
 								<li>ERB files for layout, partials <br> and templates</li>
 								<li>Markdown, Haml, etc for content</li>
@@ -87,8 +87,8 @@
 							&rarr;
 						</div>
 						<div class="boxInline">
-							<h3 class="fragment highlight-red">Output</h3>
-							<ul class="fragment">
+							<h3 class="fragment highlight-red" data-fragment-index="2">Output</h3>
+							<ul class="fragment" data-fragment-index="2">
 								<li>HTML</li>
 								<li>CSS</li>
 								<li>JS</li>
@@ -169,9 +169,11 @@
 							$ middleman init project
 						</code></pre>
 						<pre class="fragment"><code data-trim>
+							$ cd project
+						</code></pre>
+						<pre class="fragment"><code data-trim>
 							$ middleman server
 						</code></pre>
-						<small class="fragment">Instructions onscreen direct you to  http://0.0.0.0:4567/, but needed to go to  http://localhost:4567</small>
 						<img src="middleman/mm-running2.jpg" class="fragment imgBare" alt="Middleman is running" style="height:400px;width:auto;">
 					</section>
 					<section>
@@ -182,7 +184,6 @@
 						</span>
 						<br>
 						<pre class="fragment"><code data-trim>$ middleman init --template=blog</code></pre>
-						<small class="fragment">This was a bit busted, as I'd already made other changes; restarted from scratch</small>
 						<img src="middleman/mm-blog-yay.jpg" class="fragment imgBare" alt="Middleman is running" style="height:400px;width:auto;">
 					</section>
 					<section data-background="middleman/mm-config.jpg"></section>
